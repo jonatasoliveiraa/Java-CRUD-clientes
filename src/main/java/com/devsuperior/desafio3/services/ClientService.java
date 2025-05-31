@@ -22,46 +22,47 @@ public class ClientService {
     private ClientRepository repository;
 
     @Transactional(readOnly = true)
-    public Page<ClientDTO> findAll(Pageable pageable){
+    public Page<ClientDTO> findAll(Pageable pageable) {
         Page<Client> result = repository.findAll(pageable);
         return result.map(ClientConverter.CONVERTER::toDTO);
     }
 
     @Transactional(readOnly = true)
-    public ClientDTO findById(Long id){
+    public ClientDTO findById(Long id) {
         Client entity = repository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException(id));
         return ClientConverter.CONVERTER.toDTO(entity);
     }
 
     @Transactional
-    public ClientDTO insert(ClientDTO dto){
+    public ClientDTO insert(ClientDTO dto) {
         Client entity = ClientConverter.CONVERTER.toEntity(dto);
         return ClientConverter.CONVERTER.toDTO(repository.save(entity));
     }
+
     @Transactional
-    public ClientDTO update(Long id, ClientDTO dto){
+    public ClientDTO update(Long id, ClientDTO dto) {
         try {
-        Client entity = repository.getReferenceById(id);
-        return dataUpdate(entity,dto);
-        } catch (EntityNotFoundException e){
-            throw  new ResourceNotFoundException(id);
+            Client entity = repository.getReferenceById(id);
+            return dataUpdate(entity, dto);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
         }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
-    public void delete(Long id){
+    public void delete(Long id) {
         if (!repository.existsById(id)) {
             throw new ResourceNotFoundException(id);
         }
         try {
-        repository.deleteById(id);
-        } catch (DataIntegrityViolationException e){
+            repository.deleteById(id);
+        } catch (DataIntegrityViolationException e) {
             throw new DatabaseException(e.getMessage());
         }
     }
 
-    private ClientDTO dataUpdate(Client entity, ClientDTO dto){
+    private ClientDTO dataUpdate(Client entity, ClientDTO dto) {
         entity.setName(dto.getName() != null ? dto.getName() : entity.getName());
         entity.setCpf(dto.getCpf() != null ? dto.getCpf() : entity.getCpf());
         entity.setIncome(dto.getIncome() != null ? dto.getIncome() : entity.getIncome());
