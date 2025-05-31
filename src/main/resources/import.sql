@@ -1,0 +1,15 @@
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Bob Brown', '318.814.960-31', 2000.0, '1997-05-11', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Richard Green', '909.288.670-05', 3000.0, '1997-06-18', 1);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('James Brown', '340.715.150-07', 1000.0, '1997-04-13', 4);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('John Gray', '023.984.260-09', 4000.0, '1997-01-19', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Kevin Magnum', '598.956.170-97',6000.0, '1997-02-02', 3);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Maria Green', '319.591.000-41', 8000.0, '1997-07-25', 0);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Melissa Brown', '023.057.720-25', 4000.0, '1997-09-08', 1);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Natalia Black', '858.647.910-16', 5000.0, '1997-01-23', 5);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Amanda Boton', '763.600.150-05', 3000.0, '1995-01-09', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Orlando Blue', '684.004.240-50', 8000.0, '1997-07-11', 0);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Chris Brown', '704.640.350-31', 9000.0, '1997-04-10', 3);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Charlie Brown', '168.240.550-85', 10000.0, '1997-03-17', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Isaac Red', '459.593.520-01', 1000.0, '1997-01-10', 1);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Martin White', '789.995.270-00', 2000.0, '1997-05-28', 1);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Taylor Gray', '634.860.090-44', 5000.0, '1997-03-30', 2);
